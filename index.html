@@ -13,54 +13,57 @@
 	</head>
 
 	<body>
-		<div class="div-botao-topo" id="topo1">
-			<a class="topo" onclick="goHome()">Back to the top</a>
+		<div id="loading">
+			<img src="img/cook.gif">
 		</div>
-		<div class="parallax-1">
-			<div class="header-parallax" id="home">
-				<img src="img/icone.png">
-				<div class="menu-icones-container">
-					<div class="container-menu">
-						<ul class="menu">
-							<li>
-								<a href="#" class="menu-links">
-									Home
-								</a>
-							</li>
-							<li>
-								<a class="menu-links" onclick="goAbout()">
-									About
-								</a>
-							</li>
-							<li>
-								<a class="menu-links" onclick="goIgredients()">
-									Igredients
-								</a>
-							</li>
-							<li>
-								<a class="menu-links" onclick="goMenu()">
-									Menu
-								</a>
-							</li>
-							<li>
-								<a class="menu-links" onclick="goReviews()">
-									Reviews
-								</a>
-							</li>
-							<li>
-								<a class="menu-links" onclick="goReservation()">
-									Reservation
-								</a>
-							</li>
-						</ul>
+<!-- 		<div class="div-botao-topo" id="topo1">
+				<a class="topo" onclick="goHome()">Back to the top</a>
+			</div> -->
+			<div class="header-parallax" id="menu">
+					<img src="img/icone.png">
+					<div class="menu-icones-container">
+						<div class="container-menu">
+							<ul class="menu">
+								<li>
+									<a class="menu-links" onclick="goHome()">
+										Home
+									</a>
+								</li>
+								<li>
+									<a class="menu-links" onclick="goAbout()">
+										About
+									</a>
+								</li>
+								<li>
+									<a class="menu-links" onclick="goIgredients()">
+										Igredients
+									</a>
+								</li>
+								<li>
+									<a class="menu-links" onclick="goMenu()">
+										Menu
+									</a>
+								</li>
+								<li>
+									<a class="menu-links" onclick="goReviews()">
+										Reviews
+									</a>
+								</li>
+								<li>
+									<a class="menu-links" onclick="goReservation()">
+										Reservation
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="icones">
+							<a href="#"><img src="img/tt-icon.png"></a>
+							<a href="#"><img src="img/yt-icon.png"></a>
+							<a href="#"><img src="img/fb-icon.png"></a>
+						</div>
 					</div>
-					<div class="icones">
-						<a href="#"><img src="img/tt-icon.png"></a>
-						<a href="#"><img src="img/yt-icon.png"></a>
-						<a href="#"><img src="img/fb-icon.png"></a>
-					</div>
-				</div>	
 			</div>
+		<div class="parallax-1" id="home">
 			<div class="container-parallax">
 				<p class="parallax-texto">
 					the right ingredients
@@ -70,12 +73,12 @@
 				</p>
 				<img src="img/decoration.png" style="margin: 30px">
 				<div class="botoes">
-					<a href="#" class="botao-mesa">
+					<a class="botao-mesa" onclick="goReservation()">
 						<p>
 							book a table
 						</p>
 					</a>
-					<a href="#" class="botao-cardapio">
+					<a class="botao-cardapio" onclick="goMenu()">
 						<p>
 							see the menu
 						</p>
@@ -112,7 +115,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="menu-container1">
+		<div class="menu-container1" id="cardapio">
 			<div class="menu-container-position">
 				<div class="menu-container-esquerda">
 					<div class="menu-conteiner-interno1">
@@ -391,8 +394,16 @@
 								    <label for="lname" class="lbl-titulo">Email</label>
 								    <input type="email" id="fmail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" id="lname" name="lastname" placeholder="your email *" class="input-format" required>
 									
-								    <label for="lpartyNum" class="lbl-titulo">Party Number</label>
-								    <input type="text" pattern="[0-9]+$" id="lpartyNum" name="partynumber" placeholder="party number *" class="input-format" required>
+								    <label for="lpartyNum" class="lbl-titulo">Party Size</label>
+								    <select class="input-format" id="lpartyNum" name="partynumber" required>
+								    	<option value=""></option>
+								    	<option value="1">1</option>
+								    	<option value="2">2</option>
+								    	<option value="3">3</option>
+								    	<option value="4">4</option>
+								    	<option value="5">5</option>
+								    	<option value="6">6</option>
+								    </select>
 							    </div>
 							</div>
 							<div class="position-botao">
@@ -431,10 +442,14 @@
 							Mon-Thu: 7:00am-8:00pm <br>
 							Fri-Sun: 7:00am-10:00pm
 						</p>
+					<div class="position-cards-redes">
+						<div class="cards">
+							<img src="img/cards.png">
+						</div>
+
 					</div>
-					<div class="cards">
-						<img src="img/cards.png">
 					</div>
+	
 				</div>
 				<div class="location">
 					<p class="location-titulo">
@@ -448,12 +463,12 @@
 						128 Meserole Avenue
 					</p>
 					<div class="redes-sociais-position">
-					<div class="redes-sociais">
-						<a href="#"><img src="img/footer-fb-icon.png"></a>
-						<a href="#"><img src="img/footer-yt-icon.png"></a>
-						<a href="#"><img src="img/footer-tt-icon.png"></a>
+						<div class="redes-sociais">
+							<a href="#"><img src="img/footer-fb-icon.png"></a>
+							<a href="#"><img src="img/footer-yt-icon.png"></a>
+							<a href="#"><img src="img/footer-tt-icon.png"></a>
+						</div>
 					</div>
-				</div>
 				</div>
 			</div>
 		</footer>

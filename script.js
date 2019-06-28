@@ -1,11 +1,19 @@
+window.onload = function() {loading()};
+
+function loading() {
+  document.getElementById("loading").style.display = "none";
+}
+
+
 window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
-  if (document.body.scrollTop > 550 || document.documentElement.scrollTop > 550) {
-	document.getElementById("topo1").style.display = 'flex';
-  } else {
-    document.getElementById("topo1").style.display = 'none';
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){ 
+     document.getElementById("menu").style.background = 'black';
+  }else {
+    document.getElementById("menu").style.background = 'linear-gradient(180deg, black, transparent)';
   }
+  
  }
 
 function goHome() {
@@ -15,7 +23,7 @@ function goHome() {
 
 function goAbout() {
   var elmnt = document.getElementById("about");
-  elmnt.scrollIntoView({ behavior: 'smooth'});
+  elmnt.scrollIntoView({ behavior: 'smooth', block: 'start'});
 }
 
 function goIgredients() {
@@ -24,7 +32,7 @@ function goIgredients() {
 }
 
 function goMenu() {
-  var elmnt = document.getElementById("menu");
+  var elmnt = document.getElementById("cardapio");
   elmnt.scrollIntoView({ behavior: 'smooth'});
 }
 
@@ -36,17 +44,6 @@ function goReviews() {
 function goReservation() {
   var elmnt = document.getElementById("reservation");
   elmnt.scrollIntoView({ behavior: 'smooth'});
-}
-
-
-function validateForm() {
-  var partyNum =  document.forms["reservation"]["lpartyNum"].value;
-  if (isNaN(partyNum)) {
-    alert("Party number must be a number!");
-    return false;
-  }else {
-    return true;
-  }
 }
 
 function showBook() {
